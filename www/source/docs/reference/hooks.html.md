@@ -1,5 +1,6 @@
 ---
 title: Hooks
+header_anchors: ['Available hooks']
 ---
 
 # Hooks
@@ -10,7 +11,7 @@ To define a hook, simply create a bash file of the same name in `/my_plan_name/h
 > **Important** You cannot block the thread in a hook unless it is in the `run` hook. Never call `hab` or `sleep` in a hook that is not the `run` hook.
 
 # Related article: Runtime settings
-[Habitat's runtime settings](/docs/reference/runtime-settings) can be used in any of the plan hooks and also in any templatized configuration file for your application or service. 
+[Habitat's runtime settings](/docs/reference/runtime-settings) can be used in any of the plan hooks and also in any templatized configuration file for your application or service.
 
 ## Available hooks
 * [file_updated](#file_updated)
@@ -125,12 +126,12 @@ For many data services creation of specific users / roles or datastores is requi
 ###smoke_test
 : File location: `<plan>/hooks/smoke_test`
 
-: This hook is run when a new package is downloaded by the supervisor, before it is installed. 
+: This hook is run when a new package is downloaded by the supervisor, before it is installed.
 
   The `smoke_test` script must return a valid exit code from the list below.
 
   - **0**- ok
-  - **no code** - failed smoke check with additional output taken from `smoke_check` stdout. 
+  - **no code** - failed smoke check with additional output taken from `smoke_check` stdout.
   - **any other code** - Returns code, returns failed smoke check with additional output taken from `smoke_check` stdout.
 
   A `smoke_check` hook can use the following as a template:

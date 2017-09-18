@@ -1,7 +1,9 @@
 require 'slim'
 
+require 'lib/markdown_renderer'
+
 set :markdown_engine, :redcarpet
-set :markdown, fenced_code_blocks: true, tables: true, no_intra_emphasis: true, with_toc_data: true
+set :markdown, fenced_code_blocks: true, tables: true, no_intra_emphasis: true, with_toc_data: true, renderer: MarkdownRenderer
 
 ###
 # Page options, layouts, aliases and proxies
